@@ -1,18 +1,28 @@
 module Main where
 
 class Symantics repr where
-    int :: Int -> repr Int
-    add :: repr Int -> repr Int -> repr Int
+    int :: Int -> repr h Int
+    minus :: repr h Int -> repr h Int 
 
-    lam :: (repr a -> repr b) -> repr (a -> b)
-    app :: repr (a -> b) -> repr a -> repr b
+    add :: repr h Int -> repr h Int -> repr h Int
+    mult :: repr h Int -> repr h Int -> repr h Int
+
+newtype R h a = R{unR :: h -> a}
+eval e = unR e ()
 
 instance Symantics R where
-    int x = R x
-    add e1 e2 = R $ unR e1 + unR e2
+    int x = R $ const x
+    minus x = R $ \h -> -(unR x h)
 
-    lam f = R $ unR . f . R
-    app e1 e2 = R $ (unR e1) (unR e2)
+    add e1 e2 = R $ \h -> (unR e1 h) + (unR e2 h)
+    mult e1 e2 = R $ \h -> (unR e1 h) * (unR e2 h)
 
-main :: IO ()
-main = putStrLn "Hello, Haskell!"
+
+-- Testing
+
+td1 = mult (add (int 1) (int 2)) (minus (int 3))
+
+eval_td1 = eval td1
+
+main = do
+       print eval_td1
