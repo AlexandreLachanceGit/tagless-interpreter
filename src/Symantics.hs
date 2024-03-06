@@ -3,7 +3,10 @@ module Symantics where
 class Symantics repr where
     int :: Int -> repr Int
     bool :: Bool -> repr Bool
-    pair :: (a, b) -> repr (a, b)
+
+    pair :: (repr a, repr b) -> (repr a, repr b)
+    first :: (repr a, repr b) -> repr a
+    second :: (repr a, repr b) -> repr b
 
     minus :: repr Int -> repr Int 
     add :: repr Int -> repr Int -> repr Int

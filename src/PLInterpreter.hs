@@ -9,7 +9,10 @@ newtype R a = R {unR :: a}
 instance Symantics R where
     int x = R x
     bool x = R x
-    -- pair x = R $ const x
+
+    pair (x, y) = (x, y)
+    first p = R $ unR (fst p)
+    second p = R $ unR (snd p)
 
     minus x = R $ -(unR x)
     add e1 e2 = R $ unR e1 + unR e2

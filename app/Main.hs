@@ -1,4 +1,5 @@
 {-# LANGUAGE NoMonomorphismRestriction #-}
+{-# LANGUAGE FlexibleContexts #-}
 
 module Main where
 
@@ -16,7 +17,7 @@ td4 = and_ (gte (int 2) (add (int 1) (int 1))) (lt (minus (int 1)) (int 1))
 
 td5 = if_ (eq (int 2) (int 2)) (int 1) (int 2)
 
--- td6 = pair (int 2, int 3)
+td6 = second (pair (int 14, bool False))
 
 
 tpow =
@@ -43,7 +44,7 @@ eval_td2 = eval td2
 eval_td3 = eval td3
 eval_td4 = eval td4
 eval_td5 = eval td5
--- eval_td6 = eval td6
+eval_td6 = eval td6
 eval_td7 = eval tpow72
 
 main :: IO ()
@@ -53,5 +54,5 @@ main = do
        print eval_td3
        print eval_td4
        print eval_td5
-       -- print (fst eval_td6)
+       print eval_td6
        print eval_td7
