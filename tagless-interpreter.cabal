@@ -25,7 +25,8 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      PLInterpreter
+      Symantics
   other-modules:
       Paths_tagless_interpreter
   autogen-modules:
