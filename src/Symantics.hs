@@ -4,7 +4,7 @@ class Symantics repr where
     int :: Int -> repr Int
     bool :: Bool -> repr Bool
 
-    pair :: (repr a, repr b) -> (repr a, repr b)
+    pair :: (repr a, repr b) -> repr (a, b)
     first :: (repr a, repr b) -> repr a
     second :: (repr a, repr b) -> repr b
 

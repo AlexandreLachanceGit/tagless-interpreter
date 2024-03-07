@@ -10,7 +10,7 @@ instance Symantics R where
     int x = R 1
     bool x = R 1
 
-    -- pair (x, y) = R $ unR x + unR y + 1
+    pair (x, y) = R $ unR x + unR y + 1
     -- first p = R $ unR (fst p) + 1
     -- second p = R $ unR (snd p) + 1
 
