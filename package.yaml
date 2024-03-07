@@ -2,13 +2,12 @@ name:                tagless-interpreter
 version:             0.1.0.0
 github:              "githubuser/tagless-interpreter"
 license:             BSD-3-Clause
-author:              "Author name here"
-maintainer:          "example@example.com"
-copyright:           "2024 Author name here"
+author:              "Alexandre Lachance"
+maintainer:          "alexandrelachance@me.com"
+copyright:           "2024 Alexandre Lachance"
 
 extra-source-files:
 - README.md
-- CHANGELOG.md
 
 # Metadata used when publishing your package
 # synopsis:            Short description of your package

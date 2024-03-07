@@ -9,15 +9,14 @@ version:        0.1.0.0
 description:    Please see the README on GitHub at <https://github.com/githubuser/tagless-interpreter#readme>
 homepage:       https://github.com/githubuser/tagless-interpreter#readme
 bug-reports:    https://github.com/githubuser/tagless-interpreter/issues
-author:         Author name here
-maintainer:     example@example.com
-copyright:      2024 Author name here
+author:         Alexandre Lachance
+maintainer:     alexandrelachance@me.com
+copyright:      2024 Alexandre Lachance
 license:        BSD-3-Clause
 license-file:   LICENSE
 build-type:     Simple
 extra-source-files:
     README.md
-    CHANGELOG.md
 
 source-repository head
   type: git
