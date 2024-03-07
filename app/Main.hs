@@ -1,10 +1,10 @@
 {-# LANGUAGE NoMonomorphismRestriction #-}
-{-# LANGUAGE FlexibleContexts #-}
 
 module Main where
 
 import Symantics
 import PLInterpreter
+import LengthInterpreter
 
 -- Testing
 
@@ -56,3 +56,6 @@ main = do
        print eval_td5
        print eval_td6
        print eval_td7
+       print (len td1)
+       print (len (app (lam (\x -> (add x (int 1)))) (int 1)))
+       print (len tpow72)

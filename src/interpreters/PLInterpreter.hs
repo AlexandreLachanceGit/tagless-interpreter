@@ -1,6 +1,6 @@
 -- Interpreter: Usual programming language 
 
-module PLInterpreter ( R(..), eval ) where
+module PLInterpreter ( eval ) where
 
 import Symantics
 
