@@ -38,7 +38,8 @@ library
       src/interpreters
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
-      base >=4.7 && <5
+      HUnit ==1.6.*
+    , base >=4.7 && <5
     , text
   default-language: Haskell2010
 
@@ -52,7 +53,8 @@ executable tagless-interpreter-exe
       app
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      HUnit ==1.6.*
+    , base >=4.7 && <5
     , tagless-interpreter
     , text
   default-language: Haskell2010
@@ -68,7 +70,8 @@ test-suite tagless-interpreter-test
       test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      HUnit ==1.6.*
+    , base >=4.7 && <5
     , tagless-interpreter
     , text
   default-language: Haskell2010
