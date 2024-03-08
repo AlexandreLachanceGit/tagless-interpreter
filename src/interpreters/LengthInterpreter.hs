@@ -11,8 +11,8 @@ instance Symantics R where
     bool x = R 1
 
     pair (x, y) = R $ unR x + unR y + 1
-    -- first p = R $ unR (fst p) + 1
-    -- second p = R $ unR (snd p) + 1
+    first p = R $ unR p + 1
+    second p = R $ unR p + 1
 
     minus x = R $ unR x + 1
     add e1 e2 = R $ unR e1 + unR e2 + 1

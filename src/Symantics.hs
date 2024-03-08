@@ -5,8 +5,8 @@ class Symantics repr where
     bool :: Bool -> repr Bool
 
     pair :: (repr a, repr b) -> repr (a, b)
-    first :: (repr a, repr b) -> repr a
-    second :: (repr a, repr b) -> repr b
+    first :: repr (a, b) -> repr a
+    second :: repr (a, b) -> repr b
 
     minus :: repr Int -> repr Int 
     add :: repr Int -> repr Int -> repr Int
