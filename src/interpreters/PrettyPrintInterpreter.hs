@@ -1,15 +1,15 @@
--- Interpreter: Computes a valid Haskell representation of the program
+-- Interpreter: Computes a "pretty-printed" version of the program
 
 {-# LANGUAGE OverloadedStrings #-}
 
-module HaskellRepInterpreter (haskellView) where
+module PrettyPrintInterpreter (prettyView) where
 import Symantics
 import qualified Data.Text as T
 
 newtype R a = R {unR :: Int -> T.Text}
 
 instance Symantics R where
-    int x = R $ const $ "(" <> T.pack (show x) <> ")"
+    int x = R $ const $ T.pack (show x)
     bool x = R $ const $ T.pack (show x) 
 
     pair (x, y) = R $ \h -> "(" <> unR x h <> "," <> unR y h <> ")"
@@ -33,12 +33,12 @@ instance Symantics R where
     if_ c e1 e2 = R $ \h -> "(if " <> unR c h <> " then " <> unR e1 h <> " else " <> unR e2 h <> ")"
 
     lam f = R $ \h -> let x = "x" <> T.pack (show h)
-                      in "(\\" <> x <> " -> " <> unR (f (R $ const x)) (succ h) <> ")"
+                      in "(|" <> x <> "| -> " <> unR (f (R $ const x)) (succ h) <> ")"
     app e1 e2 = R $ \h -> "(" <> unR e1 h <> " " <> unR e2 h <> ")"
 
     fix f = R $ \h -> let self = "self" <> T.pack (show h)
-                      in "(fix (\\" <> self <> " -> " <> unR (f (R $ const self)) (succ h) <> "))"
+                      in "(fix (|" <> self <> "| -> " <> unR (f (R $ const self)) (succ h) <> "))"
 
-haskellView :: R a -> T.Text
-haskellView x = unR x 0
+prettyView :: R a -> T.Text
+prettyView x = unR x 0
 

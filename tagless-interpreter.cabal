@@ -28,6 +28,7 @@ library
       HaskellRepInterpreter
       LengthInterpreter
       PLInterpreter
+      PrettyPrintInterpreter
   other-modules:
       Paths_tagless_interpreter
   autogen-modules:

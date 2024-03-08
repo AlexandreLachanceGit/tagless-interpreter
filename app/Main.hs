@@ -8,6 +8,7 @@ import Symantics
 import PLInterpreter
 import HaskellRepInterpreter
 import LengthInterpreter
+import PrettyPrintInterpreter
 
 -- Testing
 
@@ -58,3 +59,7 @@ main = do
        TIO.putStrLn (haskellView td4)
        TIO.putStrLn (haskellView tpow72)
        TIO.putStrLn (haskellView tpow)
+       TIO.putStrLn (prettyView td6)
+       TIO.putStrLn (prettyView td4)
+       TIO.putStrLn (prettyView tpow72)
+       TIO.putStrLn (prettyView tpow)
