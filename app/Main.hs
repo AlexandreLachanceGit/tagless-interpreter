@@ -2,8 +2,11 @@
 
 module Main where
 
+import qualified Data.Text.IO as TIO
+
 import Symantics
 import PLInterpreter
+import HaskellRepInterpreter
 import LengthInterpreter
 
 -- Testing
@@ -38,26 +41,20 @@ tpow =
 tpow7 = lam (\x -> app (app tpow x) (int 7))
 tpow72 = app tpow7 (int 10)
 
-
-eval_td1 = eval td1
-eval_td2 = eval td2
-eval_td3 = eval td3
-eval_td4 = eval td4
-eval_td5 = eval td5
-eval_td6 = eval td6
-eval_td7 = eval tpow72
-
-main :: IO ()
+-- main :: IO ()
 main = do
-       print eval_td1
-       print eval_td2
-       print eval_td3
-       print eval_td4
-       print eval_td5
-       print eval_td6
+       print (eval td1)
+       print (eval td2)
+       print (eval td3)
+       print (eval td4)
+       print (eval td5)
+       print (eval td6)
        print (eval (first (pair (add (int 1) (int 3), int 2))))
-       print eval_td7
        print (len td1)
        print (len (app (lam (\x -> (add x (int 1)))) (int 1)))
        print (len tpow72)
        print (len td6)
+       TIO.putStrLn (haskellView td6)
+       TIO.putStrLn (haskellView td4)
+       TIO.putStrLn (haskellView tpow72)
+       TIO.putStrLn (haskellView tpow)

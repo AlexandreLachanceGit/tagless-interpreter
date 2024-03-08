@@ -38,6 +38,7 @@ library
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       base >=4.7 && <5
+    , text
   default-language: Haskell2010
 
 executable tagless-interpreter-exe
@@ -52,6 +53,7 @@ executable tagless-interpreter-exe
   build-depends:
       base >=4.7 && <5
     , tagless-interpreter
+    , text
   default-language: Haskell2010
 
 test-suite tagless-interpreter-test
@@ -67,4 +69,5 @@ test-suite tagless-interpreter-test
   build-depends:
       base >=4.7 && <5
     , tagless-interpreter
+    , text
   default-language: Haskell2010
