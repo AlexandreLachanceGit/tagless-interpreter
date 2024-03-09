@@ -42,14 +42,14 @@ tpow =
 tpow7 = lam (\x -> app (app tpow x) (int 7))
 tpow72 = app tpow7 (int 10)
 
--- main :: IO ()
+main :: IO ()
 main = do
        print (eval td1)
        print (eval td2)
        print (eval td3)
        print (eval td4)
        print (eval td5)
-       print (eval td6)
+       print (eval (add ((mult (minus (int 4)) (int 4))) (int 2)))
        print (eval (first (pair (add (int 1) (int 3), int 2))))
        print (len td1)
        print (len (app (lam (\x -> (add x (int 1)))) (int 1)))
