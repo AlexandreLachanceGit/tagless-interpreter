@@ -13,8 +13,8 @@ instance Symantics R where
     bool x = R $ const $ T.pack (show x) 
 
     pair (x, y) = R $ \h -> "(" <> unR x h <> "," <> unR y h <> ")"
-    first p = R $ \h -> "(fst " <> unR p h <> ")"
-    second p = R $ \h -> "(snd " <> unR p h <> ")"
+    first p = R $ \h -> "(first " <> unR p h <> ")"
+    second p = R $ \h -> "(second " <> unR p h <> ")"
 
     minus x = R $ \h -> "-(" <> unR x h <> ")"
     add e1 e2 = R $ \h -> "(" <> unR e1 h <> " + " <> unR e2 h <> ")"
