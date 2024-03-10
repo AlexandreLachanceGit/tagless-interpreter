@@ -38,9 +38,9 @@ main :: IO ()
 main = do
        putStrLn "Program pretty view:"
        TIO.putStrLn (prettyView tpow7_10)
-       putStrLn "Program valid haskell representation:"
+       putStrLn "\nProgram valid haskell representation:"
        TIO.putStrLn (haskellView tpow7_10)
-       putStrLn "Length of program:"
+       putStr "\nLength of program: "
        print (len tpow7_10)
-       putStrLn "Program output:"
+       putStr "\nProgram output: "
        print (eval tpow7_10)
