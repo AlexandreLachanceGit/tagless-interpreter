@@ -62,6 +62,7 @@ test-suite tagless-interpreter-test
   main-is: Spec.hs
   other-modules:
       EvalTests
+      HaskellRepTests
       LengthTests
       PrettyPrintTests
       Paths_tagless_interpreter
