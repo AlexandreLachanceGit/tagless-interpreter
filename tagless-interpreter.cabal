@@ -25,6 +25,7 @@ source-repository head
 library
   exposed-modules:
       Symantics
+      Compiler
       HaskellRepInterpreter
       LengthInterpreter
       PLInterpreter
@@ -39,6 +40,7 @@ library
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       base >=4.7 && <5
+    , template-haskell
     , text
   default-language: Haskell2010
 
@@ -54,6 +56,7 @@ executable tagless-interpreter-exe
   build-depends:
       base >=4.7 && <5
     , tagless-interpreter
+    , template-haskell
     , text
   default-language: Haskell2010
 
@@ -61,6 +64,7 @@ test-suite tagless-interpreter-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+      CompilerTests
       EvalTests
       HaskellRepTests
       LengthTests
@@ -75,5 +79,6 @@ test-suite tagless-interpreter-test
       HUnit ==1.6.*
     , base >=4.7 && <5
     , tagless-interpreter
+    , template-haskell
     , text
   default-language: Haskell2010

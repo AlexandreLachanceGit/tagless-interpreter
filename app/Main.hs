@@ -1,4 +1,5 @@
 {-# LANGUAGE NoMonomorphismRestriction #-}
+{-# LANGUAGE TemplateHaskell #-}
 
 module Main (main) where
 
@@ -9,6 +10,7 @@ import PLInterpreter
 import HaskellRepInterpreter
 import LengthInterpreter
 import PrettyPrintInterpreter
+import Compiler
 
 -- Using example given in paper just to showcase capabilities
 
@@ -44,3 +46,20 @@ main = do
        print (len tpow7_10)
        putStr "\nProgram output: "
        print (eval tpow7_10)
+       putStr "\nCompiled: "
+       print $(compile (
+            app (lam (\x -> app (app (lam
+            ( \x ->
+                fix
+                    ( \self ->
+                        lam
+                            ( \n ->
+                                if_
+                                    (lte n (int 0))
+                                    (int 1)
+                                    (mult x (app self (add n (int (-1)))))
+                            )
+                    )
+            )
+            ) x) (int 7))) (int 10)
+        ))
