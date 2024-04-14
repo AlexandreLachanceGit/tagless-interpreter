@@ -37,7 +37,7 @@ tests = [
     TestCase (assertEqual "((first (2,True)) + (second (5,2)))" (prettyView pairsProg) (T.pack "((first (2,True)) + (second (5,2)))")),
     
     -- lambda, application
-    TestCase (assertEqual "((|x0| -> x * 3) 4)" (prettyView lambdaAppProg) (T.pack "((|x0| -> (x0 * 3)) 4)")),
+    TestCase (assertEqual "((|x0| -> x * 3) 4)" (prettyView lambdaAppProg) (T.pack "(|x0| -> \n(x0 * 3)) (4)")),
 
     -- integers, addition, multiplication, (unary) minus
     TestCase (assertEqual "(-(2) + (3 * 2))" (prettyView intProg) (T.pack "(-(2) + (3 * 2))")),
