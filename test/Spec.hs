@@ -3,6 +3,7 @@ import LengthTests (tests)
 import PrettyPrintTests (tests)
 import HaskellRepTests (tests)
 import CompilerTests (tests)
+import PartialEvalTests (tests)
 
 import Test.HUnit
 
@@ -14,5 +15,6 @@ main = do
             ++ PrettyPrintTests.tests 
             ++ HaskellRepTests.tests
             ++ CompilerTests.tests
+            ++ PartialEvalTests.tests
         )
     return ()

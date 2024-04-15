@@ -11,6 +11,8 @@ import HaskellRepInterpreter
 import LengthInterpreter
 import PrettyPrintInterpreter
 import Compiler
+import TracingInterpreter
+import PartialEval
 
 -- Using example given in paper just to showcase capabilities
 
@@ -63,3 +65,7 @@ main = do
             )
             ) x) (int 7))) (int 10)
         ))
+       -- putStr "\nTracing interpreter:\n"
+       -- eval_trace (pair (int 1, bool True))
+       putStr "\nPartial eval:\n"
+       TIO.putStrLn (prettyView (partial_eval (add (int 1) (int 2))))

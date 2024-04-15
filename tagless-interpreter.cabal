@@ -25,11 +25,14 @@ source-repository head
 library
   exposed-modules:
       Symantics
+      Abstract
       Compiler
       HaskellRepInterpreter
       LengthInterpreter
+      PartialEval
       PLInterpreter
       PrettyPrintInterpreter
+      TracingInterpreter
   other-modules:
       Paths_tagless_interpreter
   autogen-modules:
@@ -68,6 +71,7 @@ test-suite tagless-interpreter-test
       EvalTests
       HaskellRepTests
       LengthTests
+      PartialEvalTests
       PrettyPrintTests
       Paths_tagless_interpreter
   autogen-modules:

@@ -1,3 +1,5 @@
+-- A compiler (using Template Haskell's typed quotes)
+
 {-# LANGUAGE TemplateHaskell #-}
 {-# LANGUAGE TypeFamilies #-}
 {-# LANGUAGE ConstraintKinds #-}
