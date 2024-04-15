@@ -21,6 +21,17 @@ The interpreters are the following:
 - `HaskellRepInterpreter`: that computes (using `Data.Text`) a valid Haskell representation of the program
 - `PrettyPrintInterpreter`: that computes (using `Data.Text`) a "pretty-printed" version of the program
 
+### Version 2
+
+In version 2 I added the following:
+
+- `Compiler`: a compiler (using Template Haskell's typed quotes; see below for details)
+- `TracingInterpreter`: a tracing interpreter (i.e. like an interpreter, but it prints out all the steps)
+- Improvements to `PrettyPrintInterpreter` so that it prints on multiple lines. 
+- `PartialEval`: a partial evaluator
+
+I also tried to implement an abstract interpretor but I didn't manage to make it work in time.
+The starter code didn't compile for me and I could not figure it out.
 
 ## Setup
 
