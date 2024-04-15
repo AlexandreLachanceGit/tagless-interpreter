@@ -4,6 +4,7 @@ import PrettyPrintTests (tests)
 import HaskellRepTests (tests)
 import CompilerTests (tests)
 import PartialEvalTests (tests)
+import TracingTests (tests)
 
 import Test.HUnit
 
@@ -16,5 +17,6 @@ main = do
             ++ HaskellRepTests.tests
             ++ CompilerTests.tests
             ++ PartialEvalTests.tests
+            ++ TracingTests.tests
         )
     return ()

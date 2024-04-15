@@ -65,7 +65,9 @@ main = do
             )
             ) x) (int 7))) (int 10)
         ))
-       -- putStr "\nTracing interpreter:\n"
-       -- eval_trace (pair (int 1, bool True))
-       putStr "\nPartial eval:\n"
+       putStr "\nTracing interpreter:\n"
+       putStr $ trace (if_ (bool False) (if_ (bool True) (add (first (pair (int 7, int 5))) (minus (int 2))) (int 2)) (int 0))
+       putStr "\nPartial eval of "
+       TIO.putStr (prettyView (add (int 1) (int 2)))
+       putStr ": \n"
        TIO.putStrLn (prettyView (partial_eval (add (int 1) (int 2))))

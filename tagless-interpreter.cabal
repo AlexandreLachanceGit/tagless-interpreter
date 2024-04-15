@@ -73,6 +73,7 @@ test-suite tagless-interpreter-test
       LengthTests
       PartialEvalTests
       PrettyPrintTests
+      TracingTests
       Paths_tagless_interpreter
   autogen-modules:
       Paths_tagless_interpreter
