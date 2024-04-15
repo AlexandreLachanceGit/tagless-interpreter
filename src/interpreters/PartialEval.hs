@@ -79,10 +79,14 @@ instance Symantics repr => Symantics (Partial repr) where
             Just False -> P e2 c
             _ -> inject (if_ cond e1 e2)
 
+    
+    -- limitation of symantics, 
+    -- changing symantics would break all other interpreters
     lam f = inject (lam (extract . f . inject))
     app (P e1 a) (P e2 b) = case a of
         Just f -> P (app e1 e2) (f <$> b)
         _ -> inject (app e1 e2)
+
     fix f = let result = fix (extract . f . inject) in inject result
 
 

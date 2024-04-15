@@ -16,9 +16,10 @@ if_statement_pe = (int 7)
 
 lambda_app = (app (lam (\x -> (add (int 2) (x)))) (int 1))
 lambda_app_pe = (app (lam (\x -> (add (int 2) (x)))) (int 1))
+-- limitation of symantics, however changing symantics would break all other interpreters
 
 tests = [
     TestCase (assertEqual "Simple" (prettyView (partial_eval simple)) (prettyView simple_pe)),
     TestCase (assertEqual "If Statement" (prettyView (partial_eval if_statement)) (prettyView if_statement_pe)),
-    TestCase (assertEqual "Lambda Application" (prettyView (partial_eval lambda_app)) (prettyView lambda_app_pe)) -- limitation of symantics
+    TestCase (assertEqual "Lambda Application" (prettyView (partial_eval lambda_app)) (prettyView lambda_app_pe)) 
     ]
