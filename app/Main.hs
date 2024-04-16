@@ -38,6 +38,8 @@ tpow7 = lam (\x -> app (app tpow x) (int 7))
 tpow7_10 :: Symantics repr => repr Int
 tpow7_10 = app tpow7 (int 10)
 
+example2 = (if_ (bool False) (if_ (bool True) (add (first (pair (int 7, int 5))) (minus (int 2))) (int 2)) (int 0))
+
 main :: IO ()
 main = do
        putStrLn "Program pretty view:"
@@ -66,8 +68,6 @@ main = do
             ) x) (int 7))) (int 10)
         ))
        putStr "\nTracing interpreter:\n"
-       putStr $ trace (if_ (bool False) (if_ (bool True) (add (first (pair (int 7, int 5))) (minus (int 2))) (int 2)) (int 0))
-       putStr "\nPartial eval of "
-       TIO.putStr (prettyView (add (int 1) (int 2)))
-       putStr ": \n"
-       TIO.putStrLn (prettyView (partial_eval (add (int 1) (int 2))))
+       putStr $ trace example2
+       putStr "\nPartial eval: "
+       TIO.putStrLn (prettyView (partial_eval example2))

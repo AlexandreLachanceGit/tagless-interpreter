@@ -31,6 +31,7 @@ In version 2 I added the following:
 - `PartialEval`: a partial evaluator
 
 I also tried to implement an abstract interpretor but I didn't manage to make it work in time.
+It is fully written, but untested and commented out.
 The starter code didn't compile for me and I could not figure it out.
 
 ## Setup

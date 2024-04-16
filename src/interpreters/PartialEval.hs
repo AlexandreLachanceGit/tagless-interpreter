@@ -87,7 +87,7 @@ instance Symantics repr => Symantics (Partial repr) where
         Just f -> P (app e1 e2) (f <$> b)
         _ -> inject (app e1 e2)
 
-    fix f = let result = fix (extract . f . inject) in inject result
+    fix f = inject (fix (extract . f . inject))
 
 
 partial_eval :: Partial repr a -> repr a
